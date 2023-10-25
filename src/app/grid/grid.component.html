@@ -1,3 +1,18 @@
-<igx-grid #grid1 [data]="localData" [autoGenerate]="true" (columnInit)="onColumnInit($event)" width="960px" height="550px">
+<igx-grid #grid1 [data]="localData" [autoGenerate]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" (columnInit)="onColumnInit($event)" width="960px" height="550px">
   <igx-paginator></igx-paginator>
+  <igx-grid-excel-style-filtering [minHeight]="'380px'" [maxHeight]="'500px'">
+    <igx-excel-style-column-operations>
+        <igx-excel-style-header
+            [showPinning]="true"
+            [showHiding]="true"
+        >
+        </igx-excel-style-header>
+
+        <igx-excel-style-sorting></igx-excel-style-sorting>
+    </igx-excel-style-column-operations>
+
+    <igx-excel-style-filter-operations>
+        <igx-excel-style-search></igx-excel-style-search>
+    </igx-excel-style-filter-operations>
+</igx-grid-excel-style-filtering>
 </igx-grid>
